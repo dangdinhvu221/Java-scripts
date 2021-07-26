@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width: 200px;
+            height: 100px;
+            padding-top: 5px;
+            font-size: 14px;
+        }
+        
+        .container {
+            background-color: rgb(6, 168, 93);
+            width: 250px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 20px;
+            padding-top: 20px;
+            padding-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Chọn các chuyên mục từ danh sách dưới đây</h3>
+        <select multiple onchange="validateSelectBox(this)">
+                <option value="tin công nghệ">Tin công nghệ</option>
+                <option value="tin thời sự">Tin thời sự</option>
+                <option value="tin quốc tế">Tin quốc tế</option>
+                <option value="tin thể thao">Tin thể thao</option>
+                <option value="tin nông nghiệp">Tin nông nghiệp</option>
+            </select>
+        <h3>bạn đã chọn:</h3>
+        <div id="result">
+            Bạn chưa chọn chuyên mục nào
+        </div>
+    </div>
+    <script language="javascript">
+        function validateSelectBox(obj) {
+            var options = obj.children;
+            var html = '';
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].selected) {
+                    html += '<li>' + options[i].value + '</li>';
+                }
+            }
+
+            document.getElementById('result').innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

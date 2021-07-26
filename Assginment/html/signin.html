@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="../css/stylelogin.css">
+
+    <body>
+        <div class="loginbox">
+            <h1>Register</h1>
+            <form action="" onload="kiemTra()">
+                <input id="username" type="text" name="" placeholder="ursername..." required />
+                <h4>Username is required and cannot be empty</h4>
+                <input id="password" type="password" name="" placeholder="Password" required/>
+                <input id="repassword" type="password" name="" placeholder="Cofirm Password" required/>
+                <input id="email" type="email" name="" placeholder="Email" required />
+                <h4>Phone Number</h4>
+                <input id="sdt" type="text" name="phone" placeholder="+84..." required>
+                <input type="datetime-local" name="">
+                <input type="submit" name="" value="REGISTER">
+                <input type="submit" name="" value="CANCEL">
+            </form>
+        </div>
+    </body>
+
+    <script>
+        const kiemTra = () => {
+            let name = document.querySelector('#username');
+            let password = document.querySelector('#password');
+            let repassword = document.querySelector('#repassword');
+            let email = document.querySelector('#email');
+            let sdt = document.querySelector('#sdt');
+
+            name.addEventListener('keyup', (e) => {
+                if (e.target.value.length > 5 && e.target.value.length < 10) {
+                    name.style.border = "1px solid green";
+                } else {
+                    name.style.border = "1px solid red";
+                }
+            });
+
+            let regex = "^0[0-9]{9}$"
+            phone.addEventListener('keyup', (p) => {
+                if (!p.target.value.match(regex)) {
+                    phone.style.border = "1px solid red";
+                } else {
+                    phone.style.border = "1px solid green";
+                }
+            });
+
+            age.addEventListener('keyup', (a) => {
+                if (a.target.value > 18) {
+                    age.style.border = '1px solid green'
+                } else {
+                    age.style.border = '1px solid red'
+                }
+
+            })
+
+            password.addEventListener('keyup', (pas) => {
+                if (pas.target.value.length > 8) {
+                    password.style.border = '1px solid green'
+                } else
+                    password.style.border = '1px solid red'
+            })
+
+            repassword.addEventListener('keyup', (repas) => {
+                if (repas.target.value == password.value) {
+                    repassword.style.border = '1px solid green'
+                } else
+                    repassword.style.border = '1px solid red'
+            })
+        }
+    </script>
+</head>
+
+</html>

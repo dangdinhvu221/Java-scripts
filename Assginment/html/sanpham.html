@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sản Phẩm</title>
+    <link rel="stylesheet" href="../css/styleproduct.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        const hienthi1 = function() {
+            var ip9 = document.getElementById("ip9");
+            var ttip9 = 700 * ip9.value;
+            document.getElementById("ttip9").innerText = ttip9;
+        }
+
+        const hienthi2 = function() {
+            var ss = document.getElementById("ss");
+            var ttss = 400 * ss.value;
+            document.getElementById("ttss").innerText = ttss;
+        }
+        const hienthi3 = function() {
+            var nk = document.getElementById("nk");
+            var ttnk = 100 * nk.value;
+            document.getElementById("ttnk").innerText = ttnk;
+        }
+
+        const hienthi4 = function() {
+            var sn = document.getElementById("sn");
+            var ttsn = 450 * sn.value;
+            document.getElementById("ttsn").innerText = ttsn;
+        }
+        const hienthi5 = function() {
+            var mt = document.getElementById("mt");
+            var ttmt = 180 * mt.value;
+            document.getElementById("ttmt").innerText = ttmt;
+        }
+        const hienthi6 = function() {
+            var op = document.getElementById("op");
+            var ttop = 600 * op.value;
+            document.getElementById("ttop").innerText = ttop;
+        }
+        const hienthi7 = function() {
+            var bp = document.getElementById("bp");
+            var ttbp = 90 * bp.value;
+            document.getElementById("ttbp").innerText = ttbp;
+        }
+        const tongtien = () => {
+            var ip9 = document.getElementById("ip9").value;
+            var ss = document.getElementById("ss").value;
+            var nk = document.getElementById("nk").value;
+            var sn = document.getElementById("sn").value;
+            var mt = document.getElementById("mt").value;
+            var op = document.getElementById("op").value;
+            var bp = document.getElementById("bp").value;
+
+            var sum = ip9 * 700 + ss * 400 + nk * 100 + sn * 450 + mt * 180 + op * 600 + bp * 90;
+            document.getElementById("tongtien").innerText = sum;
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#price').change(function() {
+                let val = $(this).val();
+                $('#sp tr').each(function(index, tr) {
+                    let price = $(tr).find('td:eq(2)').text();
+                    if (val == 0) {
+                        $('tr').show();
+                    } else if (val == 1 && price <= 400) {
+                        $('.muc1').show();
+                        $('.muc2').hide();
+                    } else if (val == 2 && price >= 400 && price <= 700) {
+                        $('.muc1').hide();
+                        $('.muc2').show();
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header id="top01" class="top-header">
+            <a href="index.html">
+                <img id="img-logo-top" src="../images/logo.PNG" width="15%">
+            </a>
+            <div class="menu-top-main">
+                <div class="text-menu">
+                    <ul class="hmenu">
+                        <li class="img-daumenu">
+                            <img src="../images/icons_menubar.png" width="20%">
+                            <ul class="ok">
+                                <li id="textbottum"><a href="#">Điện Thoại</a> </li>
+                                <li id="textbottum"><a href="#Lap-01">Laptop</a> </li>
+                                <li id="textbottum"><a href="#PC-01">PC</a></li>
+                                <li id="textbottum"><a href="#Gear-01">Phụ Kiện</a></li>
+                                <li id="textbottum"><a href="../html/album.html">Album</a> </li>
+                                <li id="textbottum"><a href="#">Sản Phẩm</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <form action="" class="search">
+                    <input type="text" name="" itemprop="query-input" placeholder="Tìm kiếm trên Cellphone..." autocomplete="off" maxlength="50" required class="search1">
+                    <img src="../images/search.png" alt="" width="7%">
+                </form>
+            </div>
+
+            <div class="menu-right">
+                <a href="#"><img src="../images/bell.png" alt=""></a>
+                <a href="#"><img src="../images/shopping-cart.png" alt=""></a>
+                <div class="user">
+                    <button class="dropbtn">
+                        <img src="../images/profile-user.png" width="32" alt="">
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html">Sign up</a>
+                        <a href="signin.html">Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="contend">
+        <h1>Bán Hàng</h1>
+        <select name="" id="price" class="PR">
+            <option value="0" >Mức Giá</option>
+            <option value="1">0 -> 400 </option>
+            <option value="2">400 -> 700</option>
+        </select>
+        <div class="bang">
+            <table border="1px" id="sp" onclick="tongtien()">
+                <tr>
+                    <th>Hàng Hoá</th>
+                    <th>Đơn Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Thành Tiền</th>
+                </tr>
+                <tr class="muc2">
+                    <td>iPhone 11</td>
+                    <td>700</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi1()" id="ip9"></td>
+                    <td id="ttip9"></td>
+                </tr>
+                <tr class="muc1">
+                    <td>SamSung</td>
+                    <td>400</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi2()" id="ss"></td>
+                    <td id="ttss"></td>
+                </tr>
+                <tr class="muc2">
+                    <td>NoKia</td>
+                    <td>100</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi3()" id="nk"></td>
+                    <td id="ttnk"></td>
+                </tr>
+                <tr class="muc2">
+                    <td>SoNy - Xpreria</td>
+                    <td>450</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi4()" id="sn"></td>
+                    <td id="ttsn"></td>
+                </tr>
+                <tr class="muc1">
+                    <td>Motorola</td>
+                    <td>180</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi5()" id="mt"></td>
+                    <td id="ttmt"></td>
+                </tr>
+                <tr class="muc2">
+                    <td>Oppo</td>
+                    <td>600</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi6()" id="op"></td>
+                    <td id="ttop"></td>
+                </tr>
+                <tr class="muc1">
+                    <td>bPhone</td>
+                    <td>90</td>
+                    <td><input type="number" min="0" step="1" onclick="hienthi7()" id="bp"></td>
+                    <td id="ttbp"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" type="button">Tổng</td>
+                    <td id="tongtien"></td>
+                </tr>
+            </table>
+            <footer>
+                FPT- POLYTECHNIC
+            </footer>
+        </div>
+    </div>
+    <footer class="bottum">
+        <div class="main-bottum">
+            <a href="#top01">
+                <img src="../images/logo.PNG" alt="" width="300px" height="70px">
+
+            </a>
+            <div class="icon">
+                <a href=""><img src="../images/facebook.png" width="32" alt=""></a>
+                <a href=""><img src="../images/youtube.png" width="32" alt=""></a>
+                <a href=""><img src="../images/instagram.png" width="32" alt=""></a>
+            </div>
+            <div class="hotline">
+                <span class="text-hotline">
+                    Hotline:
+                </span>
+                <span class="number">
+                    0332429178
+                </span>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8638558814587!2d105.74459841533215!3d21.038132792833153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b991d80fd5%3A0x53cefc99d6b0bf6f!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1611848766122!5m2!1svi!2s"
+                    width="400" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="place-education">
+                <p>
+                    Hệ thống đào tạo
+                </p>
+                <div class="place-numberPlace">
+                    <div class="real-place">
+                        Cơ sở Hà Nội
+                    </div>
+                    <br>
+                    <div class="place">
+                        <img src="../images/placeholder.png" width="20" alt=""> Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+                    </div>
+                    <div class="numberPlace">
+                        <img src="../images/phone-call.png" width="20" alt=""> (024) 7300 1955
+                    </div>
+                </div>
+
+                <div class="place-numberPlace">
+                    <div class="real-place">
+                        Cơ sở Đà Nẵng
+                    </div>
+                    <br>
+                    <div class="place">
+                        <img src="../images/placeholder.png" width="20" alt=""> Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng
+                    </div>
+                    <div class="numberPlace">
+                        <img src="../images/phone-call.png" width="20" alt=""> (0236) 3710 999
+                    </div>
+                </div>
+
+                <div class="place-numberPlace">
+                    <div class="real-place">
+                        Cơ sở Hồ Chí Minh
+                    </div>
+                    <br>
+                    <div class="place">
+                        <img src="../images/placeholder.png" width="20" alt=""> 778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh
+                    </div>
+                    <div class="numberPlace">
+                        <img src="../images/phone-call.png" width="20" alt=""> (028) 62523434
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

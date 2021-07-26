@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        do {
+            var a = prompt("Nhập a= ")
+            var b = prompt("Nhập b= ")
+            var tt = prompt("Nhập tt (+,-,*,/)= ")
+        } while (isNaN(a) == true && isNaN(b) == true);
+
+        if (isNaN(a) == false && isNaN(b) == false) {
+            switch (tt) {
+                case '+':
+                    var kq = Number(a) + Number(b);
+                    alert("Tổng = " + kq);
+                    break;
+                case '-':
+                    var kq1 = Number(a) - Number(b);
+                    alert("Hiệu = " + kq1);
+                    break;
+                case '*':
+                    var kq2 = Number(a) * Number(b);
+                    alert("Tích = " + kq2);
+                    break;
+                case '/':
+                    var kq3 = Number(a) / Number(b);
+                    alert("Thương = " + kq3);
+                case 0:
+                    System.exit(0);
+
+                default:
+                    alert("Bye!!!")
+                    break;
+            }
+        } else {
+            alert("a hoặc b . Không phải là số.");
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        
+        form {
+            width: 30%;
+            border: 1px solid red;
+            text-align: center;
+            margin: 0px auto;
+            background-color: aqua;
+            color: blue;
+        }
+        
+        form input {
+            margin: 5px;
+        }
+        
+        form input:hover {
+            box-shadow: 0 0 10px yellow;
+            color: red
+        }
+    </style>
+    <script type="text/javascript">
+        var bh = new Object();
+
+        function tinhSoSP(form) {
+            var a, b, tongHang;
+            bh.a = parseFloat(form.a.value);
+            bh.b = parseFloat(form.b.value);
+
+            form.tongHang.value = eval(tongHang);
+            if (isNaN(bh.a) == true || isNaN(bh.b) == true) {
+                alert("Vui lòng nhập lại !!!");
+                location.reload(0);
+                tinhSoSP();
+            } else {
+                bh.tongHang = 0;
+                while (bh.a >= bh.b) {
+                    bh.tongHang++;
+                    bh.a = bh.a - bh.b;
+                }
+                form.tongHang.value = eval(bh.tongHang);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Bán Hàng</h1>
+    <form method="POST" onload="setTimeout()">
+        <br> Tổng tiền :<br>
+        <input id="a" type="text" name="a" value=" ">
+        <br> Đơn giá sản phẩm :<br>
+        <input id="b" type="text" name="b" value=" ">
+        <br> Tổng hàng <br>
+        <input type="text" name="tongHang" value=" "><br>
+        <br>
+        <input type="button" value="Kết quả" onclick="tinhSoSP(this.form);">
+    </form>
+</body>
+
+</html>

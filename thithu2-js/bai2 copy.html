@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+            border: 1px solid orangered;
+            border-radius: 20px;
+        }
+        
+        button {
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            border: 1px solid rgb(0, 162, 255);
+            box-shadow: inset 0 0 2px black;
+            font-size: 15px;
+            font-weight: 600;
+            font-variant: small-caps;
+        }
+        
+        button:hover {
+            background-color: red;
+            transition: 0.3s;
+            color: yellow;
+        }
+        
+        body {
+            text-align: center;
+            background-color: rgb(218, 255, 220);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="_back()">back</button>
+    <button onclick="_next()">next</button>
+
+    <img id="images" src="../checkForm/img-laptop/1.jpg" alt="">
+
+    <script>
+        let img = document.getElementById('images');
+        let arrImg = [];
+        let index = 0;
+        var t;
+
+        for (let i = 0; i < 19; i++) {
+            arrImg[i] = new Image();
+            arrImg[i].src = '../checkForm/img-laptop/' + (i + 1) + '.jpg';
+        }
+
+        const _back = () => {
+            if (index > 0) {
+                index--;
+                img.src = arrImg[index].src
+            }
+        }
+
+        const _next = () => {
+            if (index < arrImg.length) {
+                index++;
+                img.src = arrImg[index].src
+            }
+        }
+
+        const _start = () => {
+            img.src = arrImg[index].src
+            index++;
+            if (index == arrImg.length) {
+                index = 0;
+            }
+            t = setTimeout('_start()', 1000);
+        }
+
+        const _stop = () => {
+            clearTimeout(t);
+        }
+    </script>
+    <button onclick="_start()">start</button>
+    <button onclick="_stop()">stop</button>
+</body>
+
+</html>

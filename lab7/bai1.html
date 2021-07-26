@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO jquery</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <form action="">
+        Họ và tên: <input id="fullname" type="text">
+        <button id="OK" type="button">Đồng ý</button>
+        <hr>
+        <h3>Xin chào: <span class="fullname"></span> </h3>
+
+        <script>
+            $(document).ready(function() {});
+            $('#OK').click(function() {
+                var okok = $('#fullname').val();
+                $('.fullname').html(okok);
+            })
+        </script>
+    </form>
+</body>
+
+</html>

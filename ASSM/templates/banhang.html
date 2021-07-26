@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0px auto;
+            border: 1px solid red;
+            text-align: center;
+            font-variant: small-caps;
+            font-weight: bold;
+        }
+        
+        .bang {
+            margin-left: 270px;
+        }
+        
+        select {
+            width: 280px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+    <script>
+        const hienthi1 = function() {
+            var ip9 = document.getElementById("ip9");
+            var ttip9 = 700 * ip9.value;
+            document.getElementById("ttip9").innerText = ttip9;
+        }
+
+        const hienthi2 = function() {
+            var ss = document.getElementById("ss");
+            var ttss = 400 * ss.value;
+            document.getElementById("ttss").innerText = ttss;
+        }
+        const hienthi3 = function() {
+            var nk = document.getElementById("nk");
+            var ttnk = 100 * nk.value;
+            document.getElementById("ttnk").innerText = ttnk;
+        }
+
+        const hienthi4 = function() {
+            var sn = document.getElementById("sn");
+            var ttsn = 450 * sn.value;
+            document.getElementById("ttsn").innerText = ttsn;
+        }
+        const hienthi5 = function() {
+            var mt = document.getElementById("mt");
+            var ttmt = 180 * mt.value;
+            document.getElementById("ttmt").innerText = ttmt;
+        }
+        const hienthi6 = function() {
+            var op = document.getElementById("op");
+            var ttop = 600 * op.value;
+            document.getElementById("ttop").innerText = ttop;
+        }
+        const hienthi7 = function() {
+            var bp = document.getElementById("bp");
+            var ttbp = 90 * bp.value;
+            document.getElementById("ttbp").innerText = ttbp;
+        }
+        const tongtien = () => {
+            var ip9 = document.getElementById("ip9").value;
+            var ss = document.getElementById("ss").value;
+            var nk = document.getElementById("nk").value;
+            var sn = document.getElementById("sn").value;
+            var mt = document.getElementById("mt").value;
+            var op = document.getElementById("op").value;
+            var bp = document.getElementById("bp").value;
+
+            var sum = ip9 * 700 + ss * 400 + nk * 100 + sn * 450 + mt * 180 + op * 600 + bp * 90;
+            document.getElementById("tongtien").innerText = sum;
+        }
+    </script>
+
+    <script>
+        // chọn select
+    </script>
+</head>
+
+<body>
+    <h2>Bán Hàng</h2>
+    <select name="" id="price" class="PR">
+        <option value="0" >Mức Giá</option>
+        <option value="1">0 -> 400 </option>
+        <option value="2">400 -> 700</option>
+    </select>
+    <hr>
+    <div class="bang">
+        <table border="1px" id="sp" onclick="tongtien()">
+            <tr>
+                <th> <input type="checkbox" id="checkbox" onclick="hienthi()"></th>
+                <th>Hàng Hoá</th>
+                <th>Đơn Giá</th>
+                <th>Số Lượng</th>
+                <th>Thành Tiền</th>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi1()"></td>
+                <td>iPhone 11</td>
+                <td>700</td>
+                <td><input type="number" onclick="hienthi1()" id="ip9"></td>
+                <td id="ttip9"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi2()"></td>
+                <td>SamSung</td>
+                <td>400</td>
+                <td><input type="number" onclick="hienthi2()" id="ss"></td>
+                <td id="ttss"></td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi3()"></td>
+                <td>NoKia</td>
+                <td>100</td>
+                <td><input type="number" onclick="hienthi3()" id="nk"></td>
+                <td id="ttnk"></td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi4()"></td>
+                <td>SoNy - Xpreria</td>
+                <td>450</td>
+                <td><input type="number" onclick="hienthi4()" id="sn"></td>
+                <td id="ttsn"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi5()"></td>
+                <td>Motorola</td>
+                <td>180</td>
+                <td><input type="number" onclick="hienthi5()" id="mt"></td>
+                <td id="ttmt"></td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi6()"></td>
+                <td>Oppo</td>
+                <td>600</td>
+                <td><input type="number" onclick="hienthi6()" id="op"></td>
+                <td id="ttop"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi7()"></td>
+                <td>bPhone</td>
+                <td>90</td>
+                <td><input type="number" onclick="hienthi7()" id="bp"></td>
+                <td id="ttbp"></td>
+            </tr>
+            <tr>
+                <td colspan="4" type="button">Tổng</td>
+                <td id="tongtien"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

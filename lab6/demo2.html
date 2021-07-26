@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <img id="image" src="../lab6/img/0.JPG">
+    <hr>
+    <button onclick="first()">First</button>
+    <button onclick="next()">Next</button>
+    <button onclick="prev()">Prev</button>
+    <button onclick="last()">Last</button>
+
+    <script>
+        let images = [];
+        for (let i = 0; i < 6; i++) {
+            images[i] = new Image();
+            images[i].src = 'img/' + i + '.jpg';
+        }
+
+        let index = 0;
+        const first = () => {
+            index = 0;
+            img.src = images[index].src;
+        }
+
+        const next = () => {
+            index++;
+            if (index >= images.length)
+                index = 0;
+            img.src = images[index].src;
+        }
+
+        const prev = () => {
+            index--;
+            if (index < 0)
+                index = images.length - 1;
+            img.src = images[index].src;
+        }
+
+        const last = () => {
+            index = images.length - 1;
+            img.src = images[index].src;
+        }
+    </script>
+</body>
+
+</html>

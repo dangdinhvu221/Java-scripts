@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        form {
+            text-align: center;
+        }
+        
+        input {
+            margin-left: 10px;
+            height: 30px;
+            width: 250px;
+            border-radius: 20px;
+        }
+        
+        button {
+            height: 30px;
+            width: 250px;
+            border-radius: 20px;
+            margin-left: -280px;
+        }
+        
+        .etn {
+            margin-left: 75px;
+        }
+        
+        .em {
+            margin-left: 135px;
+        }
+        
+        .ps {
+            margin-left: 38px;
+        }
+        
+        p {
+            font-size: 25px;
+        }
+        
+        span {
+            margin-left: 10px;
+            width: 300px;
+            display: inline-block;
+        }
+        
+        form {
+            background-color: aqua;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script src="../lab6/js.js">
+    </script>
+</head>
+
+<body>
+    <form action="" onsubmit="return check()">
+        <h1>KIỂM TRA DỮ LIỆU NHẬP VÀO: </h1>
+        <p><label>Enter Name: </label>
+            <input class="etn" id="name" name="name" type="text" onkeyup="check()">
+            <span id="z-name"></span>
+        </p>
+        <p><label>Email: </label>
+            <input class="em" id="email" name="email" type="email" onkeyup="checkEmail()">
+            <span id="z-email"></span>
+        </p>
+        <p><label>Enter Password</label>
+            <input class="ps" id="password" name="password" type="password" onkeyup="check()">
+            <span id="z-password"></span>
+        </p>
+        <p><label>Confim Password: </label>
+            <input type="password" id="cpassword" name="cpassword" onkeyup="checkPassword()">
+            <span id="z-cpassword"></span>
+        </p>
+        <Button type="submit">ĐĂNG KÝ</Button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button class="bl1" onclick="_next()">next</button>
+    <img src='https://nld.mediacdn.vn/thumb_w/540/2019/8/3/photo-1-15648212499661517922266.jpg'>
+    <script>
+        const img = [
+            'https://nld.mediacdn.vn/thumb_w/540/2019/8/3/photo-1-15648212499661517922266.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV5acpdFV485URdOQrmBrtWfWKqSUVOE-mISWVzOjZ3WXvU8J56ThF6LgqiKHAx5zihSA&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxOIJebDy5pvLzesnkqMFMcJy-5Opwe4rLPcf17v8V2Kdblu9vnHsxS1vy4ysX0XMtYtw&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwwRIGRl8lVhPrqe3mc6J3kALe2ESgPhStHH6eyTxA3EFyiMpZUz9QgtTUQuvW8dXc6IE&usqp=CAU'
+        ]
+
+        let i = 1
+        const okok = () => {
+            let image = document.querySelector('img');
+            image.src = `${img[i]}`
+            i++;
+            if (i >= img.length) {
+                i = 0
+            }
+        }
+
+        let t;
+
+        const _back = () => {
+            let image = document.querySelector('img');
+            image.src = `${img[i]}`
+            i--;
+            if (i >= img.length) {
+                i = 0
+            }
+        }
+        const _next = () => {
+            let image = document.querySelector('img');
+            image.src = `${img[i]}`
+            i++;
+            if (i >= img.length) {
+                i = 0
+            }
+        }
+    </script>
+    <button class="bl" onclick="_back()">back</button>
+</body>
+
+</html>

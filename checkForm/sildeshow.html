@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="_start()">start</button>
+    <button onclick="_stop()">stop</button>
+    <img id="img" src="../checkForm/img-laptop/1.jpg">
+    <span id="anh">
+        <span id="num">1</span> / <span>19</span>
+    </span>
+
+    <script>
+        var images = [];
+        var img = document.getElementById('img');
+        var index = 0;
+        var t;
+        for (let i = 0; i < 19; i++) {
+            images[i] = new Image();
+            images[i].src = '../checkForm/img-laptop/' + (i + 1) + '.jpg';
+        }
+
+        const _start = () => {
+            img.src = images[index].src;
+            index++;
+            if (index == images.length) {
+                index = 0;
+            }
+            t = setTimeout('_start()', 1000);
+            document.getElementById('anh').innerText = index + 1 + "/19";
+        }
+        const _stop = () => {
+            clearTimeout(t);
+        }
+    </script>
+</body>
+
+</html>

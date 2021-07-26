@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="image" onmouseover="fouver()" onmouseout="fout()" src="../lab6/img/0.JPG" alt="">
+    <script>
+        let out = new Image();
+        out.src = 'img/0.JPG';
+
+        let over = new Image();
+        over.src = 'img/1.JPG';
+
+        const fouver = () => {
+            let img = document.getElementById("image");
+            img.src = over.src;
+        }
+
+        const fout = () => {
+            let img = document.getElementById("image");
+            img.src = out.src;
+        }
+    </script>
+</body>
+
+</html>

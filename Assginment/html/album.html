@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Macbook Air (Chính hãng - Apple M1 - Late 2020)</title>
+    <link rel="stylesheet" href="../css/album.css">
+    <style>
+        .okok {
+            text-align: center;
+        }
+        
+        .okok button {
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            font-variant: small-caps;
+            background-color: red;
+            color: aliceblue;
+            border: none;
+        }
+        
+        .img {
+            text-align: center;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        
+        .img img {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .okok button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header id="top01" class="top-header">
+            <a href="index.html">
+                <img id="img-logo-top" src="../images/logo.PNG" width="15%">
+            </a>
+            <div class="menu-top-main">
+                <div class="text-menu">
+                    <ul class="hmenu">
+                        <li class="img-daumenu">
+                            <img src="../images/icons_menubar.png" width="20%">
+                            <ul class="ok">
+                                <li id="textbottum"><a href="#">Điện Thoại</a> </li>
+                                <li id="textbottum"><a href="#Lap-01">Laptop</a> </li>
+                                <li id="textbottum"><a href="#PC-01">PC</a></li>
+                                <li id="textbottum"><a href="#Gear-01">Phụ Kiện</a></li>
+                                <li id="textbottum"><a href="#Album">Album</a> </li>
+                                <li id="textbottum"><a href="#">Sản Phẩm</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <form action="" class="search">
+                    <input type="text" name="" itemprop="query-input" placeholder="Tìm kiếm trên Cellphone..." autocomplete="off" maxlength="50" required class="search1">
+                    <img src="../images/search.png" alt="" width="7%">
+                </form>
+            </div>
+
+            <div class="menu-right">
+                <a href="#"><img src="../images/bell.png" alt=""></a>
+                <a href="#"><img src="../images/shopping-cart.png" alt=""></a>
+                <div class="user">
+                    <button class="dropbtn">
+                        <img src="../images/profile-user.png" width="32" alt="">
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html">Đăng nhập</a>
+                        <a href="registration.html">Đăng kí</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <aside>
+            <h1 class="text-h1">ẢNH LAPTOP :</h1>
+            <hr>
+
+            <tbody>
+                <div class="img">
+                    <img id="image" src="../img-laptop/1.jpg">
+                </div>
+                <div class="okok">
+                    <button onclick="first()">First</button>
+                    <button onclick="next()">Next</button>
+                    <button onclick="prev()">Prev</button>
+                    <button onclick="last()">Last</button>
+                    <button onclick="_play()">start</button>
+                    <button onclick="_stop()">stop</button>
+                </div>
+                <hr>
+            </tbody>
+
+            <script>
+                let img = document.getElementById('image');
+                let images = [];
+                let index = 1;
+
+                for (let i = 1; i < 19; i++) {
+                    images[i] = new Image();
+                    images[i].src = '../img-laptop/' + i + '.jpg';
+                }
+
+                const first = () => {
+                    index = 1;
+                    img.src = images[index].src;
+                }
+
+                const last = () => {
+                    index = images.length - 1;
+                    img.src = images[index].src;
+                }
+
+                const next = () => {
+                    index++;
+                    if (index >= images.length)
+                        index = 1;
+                    img.src = images[index].src;
+                }
+
+                const prev = () => {
+                    index--;
+                    if (index < 0)
+                        index = images.length - 1;
+                    img.src = images[index].src;
+                }
+
+                var t;
+
+                const _play = () => {
+                    img.src = images[index].src;
+                    index++;
+                    if (index == images.length) {
+                        index = 1;
+                    }
+                    t = setTimeout("_play()", 1000);
+                }
+
+                const _stop = () => {
+                    clearTimeout(t);
+                }
+            </script>
+</body>
+
+</html>

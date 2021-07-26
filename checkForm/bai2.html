@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid red;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        img {
+            border-radius: 20px;
+            width: 500px;
+            height: 500px;
+        }
+        
+        body {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        button {
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            border: 1px solid rgb(0, 162, 255);
+            box-shadow: inset 0 0 2px black;
+            font-size: 15px;
+            font-weight: 600;
+            font-variant: small-caps;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: red;
+            transition: 0.3s;
+            color: yellow;
+        }
+        
+        span {
+            font-weight: 600;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <img id="image" src="../thithu2-js/img-laptop/1.jpg">
+    </div>
+    <!-- <button onclick="_back()">back</button>
+    <button class="ok1" onclick="_next()">Next</button> -->
+    <button onclick="_stop()">stop</button>
+    <span id="anh">1/19</span>
+    <button class="ok1" onclick="_play()">start</button>
+
+
+    <script>
+        let img = document.getElementById('image');
+        let images = [];
+        let index = 0;
+        let t;
+
+        for (let i = 0; i < 19; i++) {
+            images[i] = new Image();
+            images[i].src = '../checkForm/img-laptop/' + (i + 1) + '.jpg';
+        }
+
+        const _play = () => {
+            img.src = images[index].src;
+            index++;
+            if (index == images.length) {
+                index = 0;
+            }
+            t = setTimeout('_play()', 1000)
+            document.getElementById('anh').innerText = index + 1 + "/19";
+        }
+
+        const _stop = () => {
+            clearTimeout(t);
+        }
+    </script>
+
+</body>
+
+</html>

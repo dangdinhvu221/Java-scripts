@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        
+        .form {
+            margin: 10px;
+            text-align: center;
+            border: 1px solid red;
+            width: 50%;
+        }
+        
+        .form input {
+            margin: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function delayer() {
+            window.location = "https://www.facebook.com/?_rdc=2&_rdr"
+        }
+
+        function giai(form) {
+            var x1, x2
+            var x, y, z, delta;
+            x = parseInt(form.a.value);
+            y = parseInt(form.b.value);
+            z = parseInt(form.c.value);
+
+            delta = (Math.pow(y, 2) - (4 * x * z));
+            if (delta == 0) {
+                alert("Pt có nghiệm kép");
+                x1 = -y / (2 * x);
+                x2 = -y / (2 * x);
+                form.x.value = eval(x1);
+                form.y.value = eval(x2);
+            } else if (delta < 0) {
+                alert("Pt có nghiệm")
+            } else {
+                alert("Pt có 2 nghiệm phân biệt");
+                x1 = (-y + Math.sqrt(delta) / 2 * x)
+                x2 = (-y - Math.sqrt(delta) / 2 * x)
+                form.x.value = eval(x1);
+                form.y.value = eval(x2);
+            }
+            setTimeout("delayer()", 3000);
+        }
+    </script>
+</head>
+
+<body>
+    <form method="POST" onload="setTimout('delayer', 1000)">
+        <br> Nhập giá trị a:
+        <input type="text" name="a" value=" ">
+        <br> Nhập giá trị b:
+        <input type="text" name="b" value=" ">
+        <br> Nhập giá trị c:
+        <input type="text" name="c" value=" ">
+        <br>
+        <h3>Kết quả</h3> <br> X1 =
+        <input type="text" name="x" value=" "><br>. X2 =
+        <input type="text" name="y" value=" "><br>
+        <input type="button" value="giai" onClick="giai(this.form);">
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function hocphi() {
+            var khoahoc = document.getElementById('khoahoc');
+            if (khoahoc.value == "") {
+                price.value = "";
+                return false
+            } else if (khoahoc.value == '1') {
+                price.value = 10000;
+            } else if (khoahoc.value == '2') {
+                price.value = 20000;
+            } else if (khoahoc.value == '3') {
+                price.value = 30000;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <select id="khoahoc" onclick="hocphi()">
+            <option value="" onclick="hocphi()"></option>
+            <option value="1" onclick="hocphi()">đức gà</option>
+            <option value="2" onclick="hocphi()">đức đầU buồi</option>
+            <option value="3" onclick="hocphi()">đức gà thật</option>
+        </select>
+        <input type="text" id="price">
+    </form>
+</body>
+
+</html>

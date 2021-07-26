@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="okok.js"></script>
+
+    <style>
+        .ok {
+            margin-right: 630px;
+            width: 200px;
+            float: right;
+        }
+        
+        form {
+            display: inline-block;
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" onsubmit="return hople();">
+        <p>
+            <label>Họ Tên :</label>
+            <span class="ok">
+                <input type="text" name="txtName">
+            </span>
+            <span id="z-name"></span>
+        </p>
+        <p>
+            <label>Email :</label>
+            <span class="ok">
+                <input type="email" name="txtEmail">
+            </span>
+            <span id="z-email"></span>
+        </p>
+        <p>
+            <label>Số điện thoại :</label>
+            <span class="ok">
+                <input type="text" name="txtPhone">
+            </span>
+            <span id="z-phone"></span>
+        </p>
+        <p>
+            <label>Khoá học :</label>
+            <span class="ok">
+                <select name="txtKhoahoc" id="khoahoc">
+                    <option value=""></option>
+                    <option value="1">Khoá HTML</option>
+                    <option value="2">Khoá Javascript</option>
+            </span>
+            </select>
+            <span id="z-khoahoc"></span>
+        </p>
+        <p>
+            <label>Học phí: </label>
+            <span class="ok">
+                <input type="text" name="txtPrice">
+            </span>
+            <span id="z-price"></span>
+        </p>
+        <p>
+            <label>Hình thức học</label>
+            <span class="ok1">
+                Tại trường
+                <input type="radio" name="ok"> học online:
+                <input type="radio" name="ok">
+            </span>
+        </p>
+        <p><button type="submit">Đăng Ký</button></p>
+    </form>
+</body>
+
+</html>

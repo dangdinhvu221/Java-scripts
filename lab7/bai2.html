@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <select id="mg">
+        <option value="0">
+            Mức giá
+        </option>
+        <option value="1">
+            Dưới 200
+        </option>
+        <option value="2">
+            Từ 200---500
+        </option>
+        <option value="3">
+            Trên 500
+        </option>
+    </select>
+    <hr>
+    <table border="1" id="sp">
+        <tr>
+            <td>Iphone 9</td>
+            <td>700</td>
+        </tr>
+        <tr>
+            <td>Sam Sung</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>Nokia</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Sonny</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>Motorona</td>
+            <td>180</td>
+        </tr>
+        <tr>
+            <td>Oppo</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>BPhone</td>
+            <td>90</td>
+        </tr>
+    </table>
+
+    <script>
+        $('#mg').change(function() {
+            let okok = $(this).val();
+            switch (parseInt(okok)) {
+                case 0:
+                    alert('lựa chọn mức giá');
+                    break;
+                case 1:
+                    $('#sp tr td:last-child').each(function() {
+                        if (parseInt($(this).html()) < 200) {
+                            $(this).css('background-color', 'cyan');
+                        } else
+                            $(this).css('background-color', 'white');
+                    });
+                    break;
+                case 2:
+                    $('#sp tr td:last-child').each(function() {
+                        if (parseInt($(this).html()) >= 200 && parseInt($(this).html()) <= 500) {
+                            $(this).css('background-color', 'cyan');
+                        } else
+                            $(this).css('background-color', 'white');
+                    });
+                    break;
+                case 3:
+                    $('#sp tr td:last-child').each(function() {
+                        if (parseInt($(this).html()) > 500) {
+                            $(this).css('background-color', 'cyan');
+                        } else
+                            $(this).css('background-color', 'white');
+                    });
+                    break;
+                default:
+                    alert('Bạn chưa chọn mức giá!!!');
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>

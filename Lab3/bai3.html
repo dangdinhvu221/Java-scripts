@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var so = Math.round(100 * Math.random());
+        alert("Số bí mật = " + so);
+        while (true) {
+            do {
+                var soNhap = parseInt(prompt("Nhập số nguyên: "))
+            } while (isNaN(soNhap) == true);
+            if (so == soNhap) {
+                alert("Chúc mừng bạn đã đoán đúng.<3.");
+                alert("Số bí mật là : " + so);
+                alert("Số nhập là: " + soNhap);
+                break;
+            } else if (so > soNhap) {
+                alert("số bí mật lớn hơn");
+            } else {
+                alert("số bí mật nhỏ hơn");
+            }
+        }
+    </script>
+</body>
+
+</html>

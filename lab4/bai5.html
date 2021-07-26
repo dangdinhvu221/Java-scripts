@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        * {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        
+        form {
+            width: 30%;
+            border: 1px solid red;
+            text-align: center;
+            margin: 0px auto;
+            background-color: aqua;
+            color: blue;
+        }
+        
+        form input {
+            margin: 5px;
+        }
+        
+        form input:hover {
+            box-shadow: 0 0 10px yellow;
+            color: red
+        }
+    </style>
+    <script type="text/javascript">
+        var tt = new Object();
+
+        function tinhTong(form) {
+            tt.a = parseFloat(form.a.value);
+            tt.b = parseFloat(form.b.value);
+            if (isNaN(tt.a) == true || isNaN(tt.b) == true) {
+                alert("sai");
+                location.reload(0);
+                tinhTong();
+            } else {
+                tt.kq = tt.a + tt.b;
+                form.kq.value = eval(tt.kq);
+            }
+        }
+
+        function nhan(form) {
+            tt.a = parseFloat(form.a.value);
+            tt.b = parseFloat(form.b.value);
+            if (isNaN(tt.a) == true || isNaN(tt.b) == true) {
+                alert("sai");
+                location.reload(0);
+                tinhTong();
+            } else {
+                tt.kq = tt.a * tt.b;
+                form.kq.value = eval(tt.kq);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>TÍNH TỔNG</h1>
+    <form method="POST" onload="setTimeout()" action="">
+        <br> Số thứ nhất:<br>
+        <input id="a" type="text" name="a" value=" " required>
+        <br> Số thứ hai:<br>
+        <input id="b" type="text" name="b" value=" " required>
+        <br> Kết quả: <br>
+        <input type="text" name="kq" value=" " required><br>
+        <br>
+        <input type="button" value="Nhân" onclick="nhan(this.form)">
+        <input type="button" value="tinhTong" onclick="tinhTong(this.form);">
+    </form>
+</body>
+
+</html>
